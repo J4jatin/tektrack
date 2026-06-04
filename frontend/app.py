@@ -7,7 +7,7 @@ import requests
 import pandas as pd
 from datetime import datetime
 
-API_BASE = "http://localhost:8000"
+API_BASE = "https://tektrack.onrender.com"
 
 PRIORITY_COLORS = {"CRITICAL": "🔴", "HIGH": "🟡", "NORMAL": "🟢"}
 STATUS_LABELS = [
