@@ -1,0 +1,63 @@
+name: TekTrack CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Test (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Validate XML data file
+        run: python -c "import xml.etree.ElementTree as ET; ET.parse('backend/data/sample_orders.xml'); print('XML valid')"
+
+      - name: Initialise database (Shell script smoke test)
+        run: |
+          bash scripts/setup_env.sh || python -c "
+          from backend.database import init_db, ingest_xml
+          from pathlib import Path
+          init_db()
+          r = ingest_xml(Path('backend/data/sample_orders.xml'))
+          print(f'Seeded: {r}')
+          assert r['inserted'] == 8, f'Expected 8 inserts, got {r[\"inserted\"]}'
+          "
+
+      - name: Run pytest suite
+        run: pytest tests/ -v --tb=short
+
+      - name: Test ingest shell script
+        run: bash scripts/ingest.sh backend/data/sample_orders.xml
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install ruff
+      - name: Ruff lint
+        run: ruff check backend/ main.py tests/ --select=E,F,W --ignore=E501
