@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<photomask_orders>
+  <order id="TK-2026-001">
+    <customer>Intel Fab Dresden</customer>
+    <mask_type>ArF 193nm</mask_type>
+    <layer>Metal1</layer>
+    <quantity>4</quantity>
+    <priority>HIGH</priority>
+    <status>QUALITY_CHECK</status>
+    <created_at>2026-05-20</created_at>
+    <updated_at>2026-06-01</updated_at>
+    <engineer>M. Wagner</engineer>
+    <notes>Critical path for Q3 tape-out</notes>
+  </order>
+  <order id="TK-2026-002">
+    <customer>GlobalFoundries Dresden</customer>
+    <mask_type>EUV 13.5nm</mask_type>
+    <layer>Gate</layer>
+    <quantity>2</quantity>
+    <priority>CRITICAL</priority>
+    <status>MASK_WRITING</status>
+    <created_at>2026-05-25</created_at>
+    <updated_at>2026-06-03</updated_at>
+    <engineer>S. Müller</engineer>
+    <notes>EUV node, multibeam writer assigned</notes>
+  </order>
+  <order id="TK-2026-003">
+    <customer>Bosch Semiconductor</customer>
+    <mask_type>i-line 365nm</mask_type>
+    <layer>Via2</layer>
+    <quantity>8</quantity>
+    <priority>NORMAL</priority>
+    <status>APPROVED</status>
+    <created_at>2026-05-10</created_at>
+    <updated_at>2026-05-30</updated_at>
+    <engineer>T. Becker</engineer>
+    <notes>Automotive grade, IEC 61508 compliance required</notes>
+  </order>
+  <order id="TK-2026-004">
+    <customer>Infineon Dresden</customer>
+    <mask_type>DUV 248nm</mask_type>
+    <layer>Poly</layer>
+    <quantity>6</quantity>
+    <priority>HIGH</priority>
+    <status>SHIPPED</status>
+    <created_at>2026-05-05</created_at>
+    <updated_at>2026-06-02</updated_at>
+    <engineer>A. Schmidt</engineer>
+    <notes>Power device masks, expedited shipping</notes>
+  </order>
+  <order id="TK-2026-005">
+    <customer>X-Fab Dresden</customer>
+    <mask_type>ArF 193nm</mask_type>
+    <layer>Contact</layer>
+    <quantity>3</quantity>
+    <priority>NORMAL</priority>
+    <status>ORDER_RECEIVED</status>
+    <created_at>2026-06-01</created_at>
+    <updated_at>2026-06-01</updated_at>
+    <engineer>P. Weber</engineer>
+    <notes>New customer onboarding order</notes>
+  </order>
+  <order id="TK-2026-006">
+    <customer>Intel Fab Dresden</customer>
+    <mask_type>EUV 13.5nm</mask_type>
+    <layer>Metal2</layer>
+    <quantity>2</quantity>
+    <priority>CRITICAL</priority>
+    <status>DESIGN_REVIEW</status>
+    <created_at>2026-06-02</created_at>
+    <updated_at>2026-06-03</updated_at>
+    <engineer>M. Wagner</engineer>
+    <notes>Next-gen node prototype</notes>
+  </order>
+  <order id="TK-2026-007">
+    <customer>Bosch Semiconductor</customer>
+    <mask_type>i-line 365nm</mask_type>
+    <layer>Field Oxide</layer>
+    <quantity>10</quantity>
+    <priority>NORMAL</priority>
+    <status>DELIVERED</status>
+    <created_at>2026-04-20</created_at>
+    <updated_at>2026-05-15</updated_at>
+    <engineer>T. Becker</engineer>
+    <notes>Completed — customer confirmed receipt</notes>
+  </order>
+  <order id="TK-2026-008">
+    <customer>GlobalFoundries Dresden</customer>
+    <mask_type>DUV 248nm</mask_type>
+    <layer>N-Well</layer>
+    <quantity>5</quantity>
+    <priority>HIGH</priority>
+    <status>QUALITY_CHECK</status>
+    <created_at>2026-05-28</created_at>
+    <updated_at>2026-06-04</updated_at>
+    <engineer>S. Müller</engineer>
+    <notes>CD uniformity spec: ±1.5nm</notes>
+  </order>
+</photomask_orders>
