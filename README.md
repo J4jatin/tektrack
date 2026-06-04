@@ -1,3 +1,5 @@
+[![Live Demo](https://img.shields.io/badge/demo-streamlit-red)](https://j4jatin-tektrack-frontendapp-gomr8x.streamlit.app) [![API](https://img.shields.io/badge/api-render-green)](https://tektrack.onrender.com/docs) [![CI](https://github.com/J4jatin/tektrack/actions/workflows/ci.yml/badge.svg)](https://github.com/J4jatin/tektrack/actions)
+
 # TekTrack — Internal Photomask Production Operations Tracker
 
 A full-stack internal operations tool for tracking photomask production orders through their lifecycle — from initial receipt through mask writing, quality check, approval, and delivery.
